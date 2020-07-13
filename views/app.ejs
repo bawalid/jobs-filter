@@ -1,0 +1,20 @@
+<%- include("head.ejs") %>
+<div class="top"></div>
+<div class="cardsContainer">
+  <div class="filter">
+    <div class="fItems"></div>
+    <p class="clear">Clear</p>
+  </div>
+  <% card.forEach(function(job){ %>
+  <% if ( job.featured ){%>
+  <%- include("card.ejs", {featured: "feat", logo: job.logo, company: job.company, bnew: job.new, bfeat: job.featured, position: job.position, postedAt: job.postedAt, contract: job.contract, location: job.location, role: job.role, level: job.level, languages: job.languages}) %>
+  <%} else { %>
+  <%- include("card.ejs", {featured: "", logo: job.logo, company: job.company, bnew: job.new, bfeat: job.featured, position: job.position, postedAt: job.postedAt, contract: job.contract, location: job.location, role: job.role, level: job.level, languages: job.languages}) %>
+  <%} %>
+  <% }); %>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/js/script.js"></script>
+</body>
+
+</html>

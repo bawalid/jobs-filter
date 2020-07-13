@@ -1,0 +1,30 @@
+<div class="card <%= featured %>">
+    <img class="logo" src=<%= logo %> alt="">
+    <div class="content">
+        <div class="app">
+            <h2><%= company %> </h2>
+            <% if ( bnew ){%>
+                <div class="new">NEW!</div>
+            <%} %> 
+            <% if ( bfeat ){%>
+            <div class="featured">FEATURED</div>
+            <%} %> 
+        </div>
+        <h1 class="desc"><%= position %></h1>
+        <div class="cond">
+            <p><%= postedAt %></p>
+            <i class="fas fa-circle"></i>
+            <p><%= contract %></p>
+            <i class="fas fa-circle"></i>
+            <p><%= location %></p>
+        </div>
+    </div>
+    <hr>
+    <div class="categories">
+        <div class="cat" data-name=<%=role%>><%=role%></div>
+        <div class="cat" data-name=<%=level%>><%=level%></div>
+        <% for(let i=0; i< languages.length;i++ ){%>
+        <div class="cat" data-name=<%=languages[i]%>><%=languages[i]%></div>
+        <%} %> 
+    </div>
+</div>
